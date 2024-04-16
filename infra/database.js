@@ -11,13 +11,6 @@ async function query(queryObject) {
   });
 
   try {
-    console.log("Credenciais do Postgres:", {
-      host: process.env.POSTGRES_HOST,
-      port: process.env.POSTGRES_PORT,
-      user: process.env.POSTGRES_USER,
-      password: process.env.POSTGRES_PASSWORD,
-      database: process.env.POSTGRES_DB,
-    });
     await client.connect();
     const result = await client.query(queryObject);
     return result;
